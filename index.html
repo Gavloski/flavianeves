@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pra Você, Flavia ❤️</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Sacramento&family=Poppins:wght@400;600&display=swap');
+
+    body {
+        margin: 0;
+        padding: 60px 20px;
+        background: linear-gradient(to bottom, rgba(255, 227, 227, 0.95), rgba(255, 193, 193, 0.95)), url('imagens/fundo-flavia.jpg');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        font-family: 'Poppins', sans-serif;
+        color: #333;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow-x: hidden;
+        min-height: 100vh;
+        position: relative;
+    }
+
+    /* Post-its e animações */
+    .postit {
+        position: fixed;
+        opacity: 0.5;
+        z-index: 1;
+        width: 120px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        animation: float 4s ease-in-out infinite;
+    }
+    @keyframes float {
+        0% { transform: translateY(0) rotate(var(--rotate)); }
+        50% { transform: translateY(-10px) rotate(calc(var(--rotate) + 2deg)); }
+        100% { transform: translateY(0) rotate(var(--rotate)); }
+    }
+    .postit1 { --rotate: -8deg; top: 40px; left: 30px; }
+    .postit2 { --rotate: 5deg; top: 100px; right: 40px; }
+    .postit3 { --rotate: 10deg; bottom: 80px; left: 50px; }
+    .postit4 { --rotate: -5deg; bottom: 50px; right: 70px; }
+    .postit5 { --rotate: -12deg; top: 40%; left: 100px; transform: translateY(-50%); }
+    .postit6 { --rotate: 7deg; top: 40%; right: 120px; transform: translateY(-50%); }
+
+    .container {
+        background-color: white;
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        max-width: 600px;
+        text-align: center;
+        animation: fadeIn 2s ease;
+        position: relative;
+        z-index: 10;
+        width: 100%;
+    }
+
+    h1 {
+        color: #e91e63;
+        font-family: 'Sacramento', cursive;
+        font-size: 3em;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 1.2em;
+        line-height: 1.6;
+    }
+
+    .gallery {
+        margin-top: 25px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+
+    .gallery img {
+        width: 100%;
+        border-radius: 12px;
+        transition: transform 0.3s ease;
+        cursor: pointer;
+    }
+
+    .gallery img:hover {
+        transform: scale(1.05);
+    }
+
+    .music-button {
+        background-color: #e91e63;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 30px;
+        cursor: pointer;
+        font-size: 1em;
+        transition: background-color 0.3s;
+    }
+
+    .music-button:hover {
+        background-color: #d81b60;
+    }
+
+    .volume-slider {
+        width: 150px;
+        accent-color: #e91e63;
+    }
+
+    @keyframes fadeIn {
+        from {opacity: 0; transform: translateY(-20px);}
+        to {opacity: 1; transform: translateY(0);}
+    }
+
+    .heart {
+        position: fixed;
+        color: #e91e63;
+        font-size: 20px;
+        top: -10px;
+        animation: fall linear forwards;
+        z-index: 2;
+    }
+
+    @keyframes fall {
+        0% { transform: translateY(0) rotate(0); opacity: 1;}
+        100% { transform: translateY(100vh) rotate(360deg); opacity: 0;}
+    }
+
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 20;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0,0,0,0.7);
+        animation: fadeIn 0.4s;
+    }
+
+    .modal-content {
+        background-color: #fff;
+        margin: 15% auto;
+        padding: 20px;
+        border-radius: 20px;
+        width: 80%;
+        max-width: 400px;
+        text-align: center;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+        position: relative;
+    }
+
+    .close {
+        color: #aaa;
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .close:hover {
+        color: #e91e63;
+    }
+</style>
+</head>
+<body>
+
+<!-- Post-its -->
+<img src="imagens/postit1.jpg" class="postit postit1">
+<img src="imagens/postit2.jpg" class="postit postit2">
+<img src="imagens/postit3.jpg" class="postit postit3">
+<img src="imagens/postit4.jpg" class="postit postit4">
+<img src="imagens/postit5.jpg" class="postit postit5">
+<img src="imagens/postit6.jpg" class="postit postit6">
+
+<div class="container">
+    <h1>Para você, meu amor, Flavia Neves ❤️</h1>
+    <p>Eu estava pensando em você e queria te dizer algo especial...</p>
+    <p>Você não faz ideia do quanto eu te quero bem. Do quanto eu te desejo por perto.</p>
+    <p>Não é sobre precisar, é sobre querer e sobre escolher. Eu quero e te escolho, todos os dias.</p>
+    <p>Espero que isso traga um sorriso ao seu rosto, porque você ilumina os meus dias só por existir.</p>
+    <p>Com todo carinho,</p>
+    <p><strong>Rafael Gavloski</strong></p>
+
+    <div class="gallery">
+        <img src="imagens/flavia1.jpg" alt="Flavia sorrindo" onclick="openModal(0)">
+        <img src="imagens/flavia2.jpg" alt="Flavia linda" onclick="openModal(1)">
+        <img src="imagens/flavia3.jpg" alt="Momento especial" onclick="openModal(2)">
+        <img src="imagens/flavia4.jpg" alt="Mais um sorriso" onclick="openModal(3)">
+    </div>
+
+    <div style="display: flex; gap: 10px; justify-content: center; margin-top: 20px; flex-wrap: wrap;">
+        <button class="music-button" onclick="togglePlayPause()">▶️ Tocar / ⏸️ Pausar</button>
+        <button class="music-button" onclick="nextMusic()">⏭️ Próxima Música</button>
+        <input type="range" min="0" max="1" step="0.01" class="volume-slider" id="volumeSlider" title="Volume">
+    </div>
+
+    <p id="musicName" style="margin-top: 10px; color: #e91e63; font-weight: bold;">
+        🎶 Nenhuma música tocando
+    </p>
+</div>
+
+<!-- Música -->
+<audio id="bgMusic" loop>
+    <source id="musicSource" src="" type="audio/mp3">
+    Seu navegador não suporta áudio.
+</audio>
+
+<!-- Modais -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <p id="modal-text"></p>
+    </div>
+</div>
+
+<script>
+    const music = document.getElementById("bgMusic");
+    const musicSource = document.getElementById("musicSource");
+    const musicName = document.getElementById("musicName");
+    const volumeSlider = document.getElementById("volumeSlider");
+
+    const musicList = [
+        { src: "musica/musica1.mp3", name: "Música 1 - Nosso Amor" },
+        { src: "musica/musica2.mp3", name: "Música 2 - Só Você" },
+        { src: "musica/musica3.mp3", name: "Música 3 - Nosso Jeito" }
+    ];
+
+    let currentMusicIndex = 0;
+    let isPlaying = false;
+
+    function updateMusicInfo() {
+        musicName.innerText = `🎶 Tocando agora: ${musicList[currentMusicIndex].name}`;
+    }
+
+    function togglePlayPause() {
+        if (music.paused) {
+            music.play();
+            isPlaying = true;
+            updateMusicInfo();
+        } else {
+            music.pause();
+            isPlaying = false;
+            musicName.innerText = "🎶 Música pausada";
+        }
+    }
+
+    function nextMusic() {
+        currentMusicIndex = (currentMusicIndex + 1) % musicList.length;
+        musicSource.src = musicList[currentMusicIndex].src;
+        music.load();
+        if (isPlaying) {
+            music.play();
+        }
+        updateMusicInfo();
+    }
+
+    musicSource.src = musicList[currentMusicIndex].src;
+
+    music.addEventListener("ended", () => {
+        nextMusic();
+    });
+
+    // Volume
+    volumeSlider.addEventListener("input", () => {
+        music.volume = volumeSlider.value;
+    });
+    // Valor inicial do volume
+    volumeSlider.value = 0.5;
+    music.volume = 0.5;
+
+    // Corações
+    function createHeart() {
+        const heart = document.createElement('div');
+        heart.classList.add('heart');
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = (2 + Math.random() * 3) + "s";
+        heart.innerText = '❤️';
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 5000);
+    }
+    setInterval(createHeart, 500);
+
+    // Modais
+    const mensagens = [
+        "Quando você me olhou com aqueles olhos brilhando e me abraçou com força, eu soube... é aqui que eu quero morar. Dentro desse abraço. ❤️",
+        "Você é simplesmente maravilhosa, todos os dias. 🌸",
+        "Cada momento ao seu lado é um presente que eu guardo com carinho. 🎁",
+        "Eu entendo seus medos, mas só queria que você soubesse… eu tô aqui, disposto a fazer isso dar certo. ✨"
+    ];
+
+    function openModal(index) {
+        const modal = document.getElementById("modal");
+        const modalText = document.getElementById("modal-text");
+        modal.style.display = "block";
+        modalText.innerText = mensagens[index];
+    }
+
+    function closeModal() {
+        const modal = document.getElementById("modal");
+        modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        const modal = document.getElementById("modal");
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+
+</body>
+</html>
