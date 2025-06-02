@@ -4,85 +4,143 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Acesso Secreto ❤️</title>
+<title>Desbloqueie com Amor ❤️</title>
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Sacramento&family=Poppins:wght@400;600&display=swap');
+
     body {
-        background-color: #ffe5e5;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(to bottom right, #ffe3e3, #ffc1c1);
         font-family: 'Poppins', sans-serif;
         display: flex;
         justify-content: center;
         align-items: center;
         height: 100vh;
-        margin: 0;
+        overflow: hidden;
     }
-    .login-box {
+
+    .container {
         background-color: white;
         padding: 40px;
-        border-radius: 20px;
-        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        border-radius: 25px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.2);
         text-align: center;
         max-width: 500px;
+        width: 90%;
+        position: relative;
+        z-index: 10;
     }
+
     h1 {
+        font-family: 'Sacramento', cursive;
+        font-size: 3em;
         color: #e91e63;
+        margin-bottom: 20px;
     }
-    p {
+
+    .question {
+        font-size: 1.3em;
         color: #333;
-        font-size: 16px;
-        margin-top: 10px;
+        margin-bottom: 25px;
     }
+
     input {
-        padding: 10px;
-        width: 80%;
-        margin-top: 15px;
-        border-radius: 10px;
-        border: 1px solid #ccc;
-        font-size: 16px;
+        padding: 10px 20px;
+        border-radius: 30px;
+        border: 2px solid #e91e63;
+        width: 100%;
+        max-width: 350px;
+        outline: none;
+        font-size: 1em;
+        transition: 0.3s;
     }
+
+    input:focus {
+        border-color: #d81b60;
+        box-shadow: 0 0 5px #d81b60;
+    }
+
     button {
-        margin-top: 15px;
+        margin-top: 20px;
         padding: 10px 25px;
         background-color: #e91e63;
-        color: white;
         border: none;
-        border-radius: 20px;
+        color: white;
+        border-radius: 30px;
         cursor: pointer;
-        font-size: 16px;
+        font-size: 1em;
+        transition: background-color 0.3s;
     }
+
     button:hover {
         background-color: #d81b60;
     }
-    .error {
-        color: red;
-        margin-top: 12px;
-        display: none;
-        font-size: 14px;
+
+    .message {
+        margin-top: 20px;
+        font-weight: bold;
+        color: #e91e63;
+    }
+
+    /* Corações */
+    .heart {
+        position: fixed;
+        top: -10px;
+        font-size: 18px;
+        color: #e91e63;
+        animation: fall linear forwards;
+        z-index: 1;
+    }
+
+    @keyframes fall {
+        0% { transform: translateY(0) rotate(0); opacity: 1;}
+        100% { transform: translateY(100vh) rotate(360deg); opacity: 0;}
     }
 </style>
 </head>
 <body>
 
-<div class="login-box">
-    <h1>🗝️ Desbloqueie seu presente</h1>
-    <p><strong>Enigma:</strong></p>
-    <p>"Se me olhas, encontras jardins.<br>Se me tocas, sentes calor.<br>Se me nominas, pronuncias poesia.<br><strong>Quem sou eu?</strong>"</p>
-    <input type="text" id="password" placeholder="Digite sua resposta...">
+<div class="container">
+    <h1>Desafio do Amor ❤️</h1>
+    <p class="question">
+        Se me olhas, encontras jardins. <br>
+        Se me tocas, sentes calor. <br>
+        Se me nominas, pronuncias poesia. <br><br>
+        <strong>Quem sou eu?</strong>
+    </p>
+    <input type="text" id="resposta" placeholder="Digite sua resposta...">
     <br>
-    <button onclick="checkPassword()">Acessar</button>
-    <p class="error" id="error">Resposta errada... Pensa com carinho, amor ❤️</p>
+    <button onclick="verificar()">Enviar</button>
+    <p class="message" id="mensagem"></p>
 </div>
 
 <script>
-    function checkPassword() {
-        const password = document.getElementById("password").value.toLowerCase().trim();
-        const correct = "flavia vitoria de paula neves";
+    function verificar() {
+        const resposta = document.getElementById('resposta').value.trim().toLowerCase();
+        const correta = "flavia vitoria de paula neves";
 
-        if(password === correct.toLowerCase()) {
-            window.location.href = "pagina.html";
+        if (resposta === correta.toLowerCase()) {
+            window.location.href = "pagina.html"; // Troque para o nome da sua página
         } else {
-            document.getElementById("error").style.display = "block";
+            document.getElementById('mensagem').innerText = "Resposta incorreta... mas não desiste, amor! ❤️";
         }
     }
+
+    // Corações caindo
+    function criarCoracao() {
+        const heart = document.createElement('div');
+        heart.classList.add('heart');
+        heart.style.left = Math.random() * 100 + 'vw';
+        heart.style.animationDuration = (2 + Math.random() * 3) + 's';
+        heart.innerText = '❤️';
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 5000);
+    }
+    setInterval(criarCoracao, 500);
 </script>
 
 </body>
