@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Acesso Secreto ❤️</title>
+<style>
+    body {
+        background-color: #ffe5e5;
+        font-family: 'Poppins', sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+    .login-box {
+        background-color: white;
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        text-align: center;
+        max-width: 500px;
+    }
+    h1 {
+        color: #e91e63;
+    }
+    p {
+        color: #333;
+        font-size: 16px;
+        margin-top: 10px;
+    }
+    input {
+        padding: 10px;
+        width: 80%;
+        margin-top: 15px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+    }
+    button {
+        margin-top: 15px;
+        padding: 10px 25px;
+        background-color: #e91e63;
+        color: white;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    button:hover {
+        background-color: #d81b60;
+    }
+    .error {
+        color: red;
+        margin-top: 12px;
+        display: none;
+        font-size: 14px;
+    }
+</style>
+</head>
+<body>
+
+<div class="login-box">
+    <h1>🗝️ Desbloqueie seu presente</h1>
+    <p><strong>Enigma:</strong></p>
+    <p>"Se me olhas, encontras jardins.<br>Se me tocas, sentes calor.<br>Se me nominas, pronuncias poesia.<br><strong>Quem sou eu?</strong>"</p>
+    <input type="text" id="password" placeholder="Digite sua resposta...">
+    <br>
+    <button onclick="checkPassword()">Acessar</button>
+    <p class="error" id="error">Resposta errada... Pensa com carinho, amor ❤️</p>
+</div>
+
+<script>
+    function checkPassword() {
+        const password = document.getElementById("password").value.toLowerCase().trim();
+        const correct = "flavia vitoria de paula neves";
+
+        if(password === correct.toLowerCase()) {
+            window.location.href = "pagina.html";
+        } else {
+            document.getElementById("error").style.display = "block";
+        }
+    }
+</script>
+
+</body>
+</html>
